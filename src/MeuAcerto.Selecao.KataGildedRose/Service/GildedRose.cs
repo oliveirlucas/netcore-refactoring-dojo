@@ -35,11 +35,11 @@ namespace MeuAcerto.Selecao.KataGildedRose
                 item.Nome != TipoItem.BOLO_DE_MANA_CONJURADO &&
                 item.Qualidade > 0)
             {
-                item.Qualidade = item.Qualidade - 1;
+                item.Qualidade -= 1;
 
                 if(item.PrazoParaVenda < 0)
                 {
-                    item.Qualidade = item.Qualidade - 1;
+                    item.Qualidade -= 1;
                 }
             } 
             else
@@ -54,7 +54,7 @@ namespace MeuAcerto.Selecao.KataGildedRose
         {
             if (item.Nome != TipoItem.DENTE_DO_TARRASQUE)
             {
-                item.PrazoParaVenda = item.PrazoParaVenda - 1;
+                item.PrazoParaVenda -= 1;
             }
         }
 
@@ -63,7 +63,7 @@ namespace MeuAcerto.Selecao.KataGildedRose
             if(item.Nome == TipoItem.QUEIJO_BRIE_ENVELHECIDO &&
                 item.Qualidade < 50)
             {
-                item.Qualidade = item.Qualidade + 1;
+                item.Qualidade += 1;
             }
         }
         private void AtualizarIngressosParaOConcertoDoTurisas(Item item)
@@ -74,22 +74,22 @@ namespace MeuAcerto.Selecao.KataGildedRose
                 {
                     if(item.Qualidade < 50)
                     {
-                        item.Qualidade = item.Qualidade + 1;
+                        item.Qualidade += 1;
 
                         if (item.PrazoParaVenda <= 10 && item.Qualidade < 50)
                         {
-                            item.Qualidade = item.Qualidade + 1;
+                            item.Qualidade += 1;
                         }
 
                         if (item.PrazoParaVenda <= 5 && item.Qualidade < 50)
                         {
-                            item.Qualidade = item.Qualidade + 1;
+                            item.Qualidade += 1;
                         }
                     }
                 }
                 else
                 {
-                    item.Qualidade = item.Qualidade - item.Qualidade;
+                    item.Qualidade -= item.Qualidade;
                 }
             }
         }
@@ -97,7 +97,7 @@ namespace MeuAcerto.Selecao.KataGildedRose
         {
             if (item.Nome == TipoItem.BOLO_DE_MANA_CONJURADO && item.Qualidade > 0)
             {
-                item.Qualidade = item.Qualidade - 2;
+                item.Qualidade -= 2;
             }
         }
     }
